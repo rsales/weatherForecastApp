@@ -1,21 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
-export default function Details({ navigation } : { navigation: any }) {
+export default function Details({ route, navigation } : { route: any, navigation: any }) {
+  const { itemId } = route.params;
+  const { otherParam } = route.params;
   return (
     <View style={styles.container}>
       <Text>Page Details!</Text>
-      <View style={styles.box} />
-      <Button
-        title="Go to Details... again"
-        onPress={() => navigation.push('Details')}
-      />
-      <Button title="Go to Main" onPress={() => navigation.navigate('Main')} />
-      <Button title="Go back" onPress={() => navigation.goBack()} />
-      <Button
-        title="Go back to first screen in stack"
-        onPress={() => navigation.popToTop()}
-      />
+      <Text>itemId: {JSON.stringify(itemId)}</Text>
+      <Text>otherParam: {JSON.stringify(otherParam)}</Text>
     </View>
   );
 }
@@ -26,11 +19,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginTop: 10,
-    backgroundColor: "#F00"
   }
 });

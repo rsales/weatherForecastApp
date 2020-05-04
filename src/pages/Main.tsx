@@ -1,17 +1,20 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
-import { SOME_KEY } from 'react-native-dotenv'
-
 export default function Main({ navigation } : { navigation: any }) {
   return (
     <View style={styles.container}>
       <Text>Page Main!</Text>
-      <Text>{SOME_KEY}</Text>
       <View style={styles.box} />
       <Button
         title="Go to Details"
-        onPress={() => navigation.navigate('Details')}
+        onPress={() => {
+          navigation.navigate('Details', {
+            itemId: 86,
+            otherParam: 'anything you want here',
+            name: 'Curitiba'
+          });
+        }}
       />
     </View>
   );

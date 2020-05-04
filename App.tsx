@@ -21,7 +21,7 @@ export default function App() {
         <Stack.Screen 
           name="Details"
           component={Details}
-          options={{ title: 'Details' }}
+          options={({ route } : { route: any }) => ({ title: route.params.name })}
         />
       </Stack.Navigator>
     </NavigationContainer>
