@@ -16,7 +16,7 @@ export default function App() {
         <Stack.Screen 
           name="Main"
           component={Main}
-          options={{ title: 'Main' }}
+          options={{ title: 'Explore' }}
         />
         <Stack.Screen 
           name="Details"
