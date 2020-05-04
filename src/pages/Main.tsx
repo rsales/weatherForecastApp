@@ -1,23 +1,31 @@
-import React from 'react';
+import React, { Component } from 'react';
+import apiUnsplash from '../services/apiUnsplash';
+import apiWeather from '../services/apiWeather';
+
 import { StyleSheet, Text, View, Button } from 'react-native';
 
-export default function Main({ navigation } : { navigation: any }) {
-  return (
-    <View style={styles.container}>
-      <Text>Page Main!</Text>
-      <View style={styles.box} />
-      <Button
-        title="Go to Details"
-        onPress={() => {
-          navigation.navigate('Details', {
-            itemId: 86,
-            otherParam: 'anything you want here',
-            name: 'Curitiba'
-          });
-        }}
-      />
-    </View>
-  );
+export default class Main extends Component {
+  componentDidMount() {
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text>Page Main!</Text>
+        <View style={styles.box} />
+        {/* <Button
+          title="Go to Details"
+          onPress={() => {
+            navigation.navigate('Details', {
+              itemId: 86,
+              otherParam: 'anything you want here',
+              name: 'Curitiba'
+            });
+          }}
+        /> */}
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
