@@ -5,8 +5,6 @@ import { UNSPLASH_KEY } from 'react-native-dotenv'
 import apiUnsplash from '../services/apiUnsplash';
 import apiWeather from '../services/apiWeather';
 
-import axios from 'axios';
-
 import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default class Main extends Component {
