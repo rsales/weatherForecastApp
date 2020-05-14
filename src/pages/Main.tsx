@@ -5,7 +5,7 @@ import { UNSPLASH_KEY } from 'react-native-dotenv'
 import apiUnsplash from '../services/apiUnsplash';
 import apiWeather from '../services/apiWeather';
 
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, Image } from 'react-native';
 
 export default class Main extends Component {
   state = {
@@ -47,9 +47,14 @@ export default class Main extends Component {
       <View style={styles.container}>
         <Text>Page Main!</Text>
         {this.state.cityImages.map(image => (
-          <Text key={image.id}>{image.id}</Text>
+          <Image
+            key={image.id}
+            style={styles.boxImage}
+            source={{
+              uri: `${image.urls.small}`,
+            }}
+          />
         ))}
-        <View style={styles.box} />
         {/* <Button
           title="Go to Details"
           onPress={() => {
@@ -72,10 +77,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  box: {
-    width: 60,
+  boxImage: {
+    width: '70%',
     height: 60,
-    marginTop: 10,
-    backgroundColor: "#F00"
+    marginBottom: 5,
+    backgroundColor: "grey"
   }
 });
